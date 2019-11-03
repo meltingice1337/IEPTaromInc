@@ -1,10 +1,9 @@
 #include <avion_pasageri.h>
 
 AvionPasageri::AvionPasageri(Corp *corp, Motoare *motoare, Aripi *aripi, int nrPasageri)
-    : Avion(corp, motoare, aripi, Pasageri)
+    : Avion(corp, motoare, aripi)
 {
     this->nrPasageri = nrPasageri;
-    this->tipAvion = Pasageri;
 }
 
 int AvionPasageri::getNrPasageri()

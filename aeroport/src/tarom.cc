@@ -25,13 +25,18 @@ int main()
             for (it = avioane.begin(); it != avioane.end(); ++it)
             {
                 Avion *a = *it;
-                printf("Avion de %s, id: %d, nrKm: %d, disponibilitate: %s", a->tipAvion == Pasageri ? "Pasageri" : "Marfa", a->getId(), a->getNrKm(), a->eFunctional() ? "Da" : "Nu");
-                if (a->tipAvion == Pasageri)
+                AvionPasageri *aa = dynamic_cast<AvionPasageri *>(a);
+                int tipAvion = 0;
+                if (!aa)
+                    tipAvion = 1;
+
+                printf("Avion de %s, id: %d, nrKm: %d, disponibilitate: %s", tipAvion == 0 ? "Pasageri" : "Marfa", a->getId(), a->getNrKm(), a->eFunctional() ? "Da" : "Nu");
+                if (tipAvion == 0)
                 {
                     AvionPasageri *aa = dynamic_cast<AvionPasageri *>(a);
                     cout << ", nr pasageri: " << aa->getNrPasageri();
                 }
-                else if (a->tipAvion == Marfa)
+                else if (tipAvion == 1)
                 {
                     AvionMarfa *aa = dynamic_cast<AvionMarfa *>(a);
                     cout << ", culoare: " << aa->getCuloare();

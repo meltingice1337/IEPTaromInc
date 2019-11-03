@@ -5,20 +5,13 @@
 #ifndef Avion_H
 #define Avion_H
 
-enum TipAvion
-{
-    Pasageri = 0,
-    Marfa = 1
-};
-
 class Avion
 {
 public:
-    Avion(Corp *corp, Motoare *motoare, Aripi *aripi, TipAvion tipAvion);
+    Avion(Corp *corp, Motoare *motoare, Aripi *aripi);
     int getId();
     virtual int getNrKm();
     virtual bool eFunctional();
-    TipAvion tipAvion;
 
 private:
     Corp *corp;

@@ -1,11 +1,10 @@
 #include <avion.h>
 
-Avion::Avion(Corp *corp, Motoare *motoare, Aripi *aripi, TipAvion tipAvion)
+Avion::Avion(Corp *corp, Motoare *motoare, Aripi *aripi)
 {
     this->corp = corp;
     this->motoare = motoare;
     this->aripi = aripi;
-    this->tipAvion;
 }
 
 int Avion::getId()
