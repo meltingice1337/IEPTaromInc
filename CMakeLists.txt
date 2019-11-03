@@ -1,0 +1,7 @@
+ cmake_minimum_required(VERSION 3.16)
+set(CMAKE_CXX_STANDARD 14) 
+project(depozit_avioane)
+add_executable(depozit_avioane main.cc)
+target_link_libraries(depozit_avioane avion_lib)
+add_subdirectory(avion)
+add_subdirectory(aeroport)
