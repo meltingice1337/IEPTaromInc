@@ -30,7 +30,7 @@ int main()
                 if (!aa)
                     tipAvion = 1;
 
-                printf("Avion de %s, id: %d, nrKm: %d, disponibilitate: %s", tipAvion == 0 ? "Pasageri" : "Marfa", a->getId(), a->getNrKm(), a->eFunctional() ? "Da" : "Nu");
+                printf("Avion de %s, id: %d, Nr KM: %d, disponibilitate: %s", tipAvion == 0 ? "Pasageri" : "Marfa", a->getId(), a->getNrKm(), a->eFunctional() ? "Da" : "Nu");
                 if (tipAvion == 0)
                 {
                     AvionPasageri *aa = dynamic_cast<AvionPasageri *>(a);
@@ -90,6 +90,45 @@ int main()
             if (found)
                 cout << "-->Am sters avionul cu id-ul " << id << endl;
             else
+                cout << "-->Nu am gasit avionul cu id-ul " << id << endl;
+        }
+        else if (choice == 5)
+        {
+            int id;
+            list<Avion *>::iterator it;
+            cout << "Verifica disponibilitate avionului cu id-ul: ";
+            cin >> id;
+            bool found = false;
+            for (it = avioane.begin(); it != avioane.end(); ++it)
+            {
+                if ((*it)->getId() == id)
+                {
+                    printf("->>Avionul cu id-ul %d este %s", id, (*it)->getDisponibilitate() ? "DISPONIBIL" : "INDISPONIBIL");
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                cout << "-->Nu am gasit avionul cu id-ul " << id << endl;
+        }
+        else if (choice == 6)
+        {
+            int id;
+            list<Avion *>::iterator it;
+            cout << "Fa indisponibil avionul cu id-ul: ";
+            cin >> id;
+            bool found = false;
+            for (it = avioane.begin(); it != avioane.end(); ++it)
+            {
+                if ((*it)->getId() == id)
+                {
+                    printf("->>Avionul cu id-ul %d este acum INDISPONIBIL", id);
+                    (*it)->setDisponibilitate(false);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
                 cout << "-->Nu am gasit avionul cu id-ul " << id << endl;
         }
     } while (choice != 0);
