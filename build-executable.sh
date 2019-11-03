@@ -1,2 +1,5 @@
 #/bin/sh
-cmake --build build --target ALL_BUILD --config Release
+mkdir build
+cd build
+cmake ..
+cmake --build . --target ALL_BUILD --config Release
