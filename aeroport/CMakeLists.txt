@@ -1,4 +1,4 @@
- cmake_minimum_required(VERSION 3.16)
+ cmake_minimum_required(VERSION 3.15)
 set(CMAKE_CXX_STANDARD 14) 
 project(hendri_coanda)
 set(SOURCE_FILES src/henri_coanda.cc)
